@@ -210,4 +210,3 @@ Here we only need to check if the client is connected to the mqtt server or not.
 
 
 This was the basic sketch and its explanation on how we can integrate our devices to the SmarDen.Tech Platform.
-
