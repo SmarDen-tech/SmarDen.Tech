@@ -30,7 +30,6 @@ Accessing the meaningful information is always the main concern, with our user f
  
 4. <b>Components:</b>Here you'll find different components like generate topics, list of topics, instance status and definition. 
       - Generate Topics: Here you need to type your existing instance name and click on 'genetate topic' button, then your topic will be generated and you can use this topic with you're device for pub/sub actions. 
-      - List of Topics: Here you'll see all your generated topics. 
       - Instance status: This will tell you the current status of your instance. 
       - Definition: Here you can check the port numbers, host and other important information. 
       
