@@ -11,9 +11,9 @@ Once we receive the data or the connection status from the device, we will redir
  
 In case if the device is disconnected to the Internet, there is a Last Will Message that we will receive from the device which ensures that the device is no longer connected to the Internet. 
 ```
-char* Pub_topic = "sdtech/userid/pubtopic";
-const char* willmessage = "deviceID/Disonnected"; 
-const char* mqttstatus = "deviceID/Connected";
+String Pub_topic = ".....................";
+String willmessage = "dev_status " + DeviceID + " offline"; //do not change 
+String mqttstatus = "dev_status " + DeviceID + " online";  // do not change
 ```
 These are the few things that you need to define in your program for maintaining the connection status. 
 Let's focus on each of them. 
@@ -31,10 +31,10 @@ void reconnect() {
     String clientId = "ESP8266Client-";
     clientId += String(random(0xffff), HEX);
     // Attempt to connect
-    if (client.connect(clientId.c_str(),username,mqtt_pass,willtopic, 1, 0, willmessage)) {
+    if (client.connect(clientId.c_str(),username,mqtt_pass,Pub_topic.c_str(), 1, 0, willmessage.c_str())) {
       Serial.println("connected");
       client.subscribe(Topic);
-      client.publish(status_topic,(char*)mqttstatus.c_str(), true);
+      client.publish(Pub_topic.c_str(), mqttstatus.c_str(), false);
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
