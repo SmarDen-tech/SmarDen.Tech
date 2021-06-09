@@ -24,14 +24,28 @@ Accessing the meaningful information is always the main concern, with our user f
 2. <b>Login: </b>Here you can login into the dashboard with your correct Username and Password.
    
 
-3.  <b>Dashboard: </b>On the Dashboard you will get the section of notifications, instance creation, instance status and definitions.
-       - Create Instance: Here in create instance you have to enter your desired instance name with password. The instance creation success or failure message will be shown in Instance Status and one user can create only one instance.
-       - definition: This section contains all the important infromation about your instance like the hostname, port numbers, etc. all the things that you'll be needing while programming the device. 
+3. <b>Dashboard: </b>On the Dashboard, you'll get the complete overview about all the devices and elements that you've created. You can access those devices, control them and monitor them from your Dashboard. Moreover, you'll also get to know about the device status and signal Strength. It is a complete overview of all the things that are related with your device. 
+
+4. <b>My Instance: </b>Click on the My Instance and in this section you can create your own mqtt instance which you'll be using to create the connection of your IoT device with the SmarDen.Tech dashboard.
+
+5. <b>Components: </b>There are different components that you can integrate with your SmarDen Dashboard. The Hierarchy goes that way - Groups -> Devices -> Elements. 
+  - Groups: First you need to create a group so that you can add multiple devices in that group. The Group name can be anything like Sensors, Living Room, Switches, Bed Room etc. 
+  - Devices: After creating the Group, you can now create your own device by clicking on the devices option. Here you can choose a device name like "LED" or "Fan", then you need to select a group and then click on create. Once the device is Created you'll be seeing the "Device ID" associated with that device. You'll be needing that device ID while programming you IoT device. 
+  - Elements: In the Elements sectioin, you can create a UI element that will help you in monitoring or controlling your IoT Device. You can click on Add button to add an element in to the dashboard. 
+It will ask you about the "Component Name", here you need to enter the name of your element. 
+Then you'll have to select a device under which you want to create this element. 
+Then you need to select the device type - either it be a sensor or a switch. 
+
+Further when you'll choose a device type, you'll get different option for different type of device. 
+- For Sensors there are widgets, notifications, gauge.
+- For Switches there are Toggle buttons, Push Buttons, Sliders, Colour Picker. 
+
+You can select any of these devices and it will be reflected on the dashboard. 
+Once the element is created, you'll see the list of elements along with their specific "Element ID" and "Device ID". 
+
+* You'll be needing these element IDs and Device IDs while programming your IoT Hardware. 
+
  
-4. <b>Components:</b>Here you'll find different components like generate topics, list of topics, instance status and definition. 
-      - Generate Topics: Here you need to type your existing instance name and click on 'genetate topic' button, then your topic will be generated and you can use this topic with you're device for pub/sub actions. 
-      - Instance status: This will tell you the current status of your instance. 
-      - Definition: Here you can check the port numbers, host and other important information. 
       
 ## Connection Panel
 The Connection panel is provided to test the working of your current instance with the end-device, here you will find the fields like Host, Port, Username, Password, Keep Alive, Timeout, Last will Topic, Last will message.
