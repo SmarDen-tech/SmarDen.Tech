@@ -1,4 +1,10 @@
 # SmarDen.Tech
+- 👋 Hi, I’m @SmarDen-tech
+- 👀 I’m interested in Internet of things.
+- 🌱 I’m currently learning "a lot of things"
+- 💞️ I’m looking to collaborate on "Pheww! IoT Obviously"
+- 📫 How to reach me - It's quite simple, drop a mail - info@smarden.in
+or DM us on Insatagram @Smar_den
 
 ## SmarDen For Developers 
 Smarden.tech is a platform for Internet of Things and it is for the developers and the IoT enthusiasts who are working in the field of Internet of Things and want a complete one stop solution for the MQTT, Cloud, Back-end and Dashboard.
