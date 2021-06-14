@@ -8,6 +8,7 @@
 #define Switch D4
 #define DHTPIN D2
 #define DHTTYPE DHT11
+#define refresh_time 5000 //define the sensor value refresh time in miliseconds
 //=========================Enter Device ID==========================
 String DeviceID = "p10M9pA8XBGsSiKowFiWcA";
 
@@ -24,7 +25,7 @@ String Pub_topic = "SMD_af619e492061ce2bdf17e2f86e0fe64c";
 
 //=====================Add element ID=================================
 String SwitchID = "........................."
-                  String TempID =  "sens10YI2kbw7bBPwdUAXKwW4Q";
+String TempID =  "sens10YI2kbw7bBPwdUAXKwW4Q";
 String HumID = "sens10lT8EJP7DD3WowzFYIQ";
 
 //=====================Connection Status messages=====================
@@ -61,7 +62,6 @@ void setup_wifi() {
   }
 
   randomSeed(micros());
-
   Serial.println("");
   Serial.println("WiFi connected");
   Serial.println("IP address: ");
@@ -164,7 +164,7 @@ void setup() {
 
 == == == == == == == == == == == == == == == == = Temperature Function == == == == == == == == == == == == == == == == == == == == == ==
 void temperature () {
-
+  delay(refresh_time);
   float h = dht.readHumidity();
   // Read temperature as Celsius (the default)
   float t = dht.readTemperature();
@@ -173,7 +173,6 @@ void temperature () {
   Serial.print(F("%  Temperature: "));
   Serial.print(t);
   Serial.print(F("°C "));
-  delay(refresh_time);
   Serial.print("Publishing Device status and Signal Strength");
   client.publish(Pub_topic.c_str(), signalstrength.c_str(), false); // Publish the Signal Strength 
   String Temp_msg = "smarden_dev_respo " + TempID + " " + String(t);
@@ -188,6 +187,4 @@ void loop() {
     reconnect();
   }
   client.loop();
-  delay (10000);
-  temperature();
 }
