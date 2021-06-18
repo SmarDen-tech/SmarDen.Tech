@@ -13,20 +13,20 @@
 String DeviceID = "p10M9pA8XBGsSiKowFiWcA";
 
 //=======================WiFi and Mqtt Credentials=================
-const char* ssid = "Does it matter?"; // Wifi SSID
-const char* password = "asdfghjkl";   // WiFi Pssword
+const char* ssid = "............."; // Wifi SSID
+const char* password = ".........";   // WiFi Pssword
 const char* mqtt_server = "login.smarden.tech";  // Mqtt Server Address, please do not change
-const char* username = "shreymqtt";    //your instance username
-const char* mqtt_pass = "mymqtt";      // your instance password
+const char* username = ".........";    //your instance username
+const char* mqtt_pass = "...........";      // your instance password
 
 //=======================Pub/sub Topics==============================
-char* Topic = "p10M9pA8XBGsSiKowFiWcA/led";
-String Pub_topic = "SMD_af619e492061ce2bdf17e2f86e0fe64c";
+char* Topic = ".................."; // The Topic that you made for your device 
+String Pub_topic = "SMD_af619e492061ce2bdf17e2f86e0fe64c";  // Publishing topic ; do not change 
 
 //=====================Add element ID=================================
-String SwitchID = "........................."
-String TempID =  "sens10YI2kbw7bBPwdUAXKwW4Q";
-String HumID = "sens10lT8EJP7DD3WowzFYIQ";
+String SwitchID = "........................." //Element ID for Switch 
+String TempID =  "........................."; // Element ID for the Temperature
+String HumID = "..........................."; // Element ID for the Humidity 
 
 //=====================Connection Status messages=====================
 String willmessage = "dev_status " + DeviceID + " offline"; //do not change
@@ -158,7 +158,7 @@ void setup() {
   Serial.println("Added T1");
   T1.enable();
   dht.begin();
-  client.setServer(mqtt_server, 1884);
+  client.setServer(mqtt_server, 1884); //mqtt port will be 1884
   client.setCallback(callback);
 }
 
