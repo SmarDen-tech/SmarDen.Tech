@@ -5,7 +5,6 @@
 #include "DHT.h"
 
 
-#define Switch D4
 #define DHTPIN D2
 #define DHTTYPE DHT11
 #define refresh_time 5000 //define the sensor value refresh time in miliseconds
@@ -20,11 +19,9 @@ const char* username = ".........";    //your instance username
 const char* mqtt_pass = "...........";      // your instance password
 
 //=======================Pub/sub Topics==============================
-char* Topic = ".................."; // The Topic that you made for your device 
-String Pub_topic = "SMD_af619e492061ce2bdf17e2f86e0fe64c";  // Publishing topic ; do not change 
+String Pub_topic = "SMD_.........";  // Publishing topic, click on the element properties to find your publishing topic. 
 
 //=====================Add element ID=================================
-String SwitchID = "........................." //Element ID for Switch 
 String TempID =  "........................."; // Element ID for the Temperature
 String HumID = "..........................."; // Element ID for the Humidity 
 
@@ -74,39 +71,6 @@ void setup_wifi() {
 }
 
 
-//======================================MQTT Callback Function=========================================
-void callback(char* topic, byte* payload, unsigned int length) {
-  Serial.print("Message arrived [");
-  Serial.print(topic);
-  Serial.print("] ");
-  char sub[1000];
-  int c = 0;
-  char* payl = (char *)payload;
-  while (c < length) {
-    sub[c] = payl[c];
-    c++;
-  }
-  sub[c] = '\0';
-  Serial.println(sub);
-  String msg = sub;
-  Serial.println();
-
-  if (msg == "on") {
-    digitalWrite(Switch, HIGH);   // Turn the LED on (Note that LOW is the voltage level
-    String Pub_msg = "smarden_dev_respo " + SwitchID + " " + msg;
-    client.publish(Pub_topic.c_str(), Pub_msg.c_str(), true);
-    Serial.println("LED On");   // but actually the LED is on; this is becauseit is active low on the ESP-01)
-
-  } else if (msg == "off") {
-    digitalWrite(Switch, LOW);  // Turn the LED off by making the voltage HIGH
-    String Pub_msg = "smarden_dev_respo " + SwitchID + " " + msg;
-    client.publish(Pub_topic.c_str(), Pub_msg.c_str(), true);
-    Serial.println("LED OFF");
-  }
-
-}
-
-
 //===============================================MQTT Reconnect function==============================================
 void reconnect() {
   // Loop until we're reconnected
@@ -118,7 +82,6 @@ void reconnect() {
     // Attempt to connect
     if (client.connect(clientId.c_str(), username, mqtt_pass, Pub_topic.c_str(), 1, 0, willmessage.c_str())) {
       Serial.println("connected");
-      client.subscribe(Topic);
       client.publish(Pub_topic.c_str(), mqttstatus.c_str(), false);
       client.publish(Pub_topic.c_str(), signalstrength.c_str(), false);
     } else {
@@ -159,7 +122,6 @@ void setup() {
   T1.enable();
   dht.begin();
   client.setServer(mqtt_server, 1884); //mqtt port will be 1884
-  client.setCallback(callback);
 }
 
 == == == == == == == == == == == == == == == == = Temperature Function == == == == == == == == == == == == == == == == == == == == == ==
@@ -173,8 +135,11 @@ void temperature () {
   Serial.print(F("%  Temperature: "));
   Serial.print(t);
   Serial.print(F("°C "));
+  
   Serial.print("Publishing Device status and Signal Strength");
   client.publish(Pub_topic.c_str(), signalstrength.c_str(), false); // Publish the Signal Strength 
+  client.publish(Pub_topic.c_str(), mqttstatus.c_str(), false); //Publish the Device Status 
+  
   String Temp_msg = "smarden_dev_respo " + TempID + " " + String(t);
   String Hum_msg = "smarden_dev_respo " + HumID + " " + String(h);
   client.publish(Pub_topic.c_str(), Temp_msg.c_str(), true); // Publish the temperature to the server
