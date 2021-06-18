@@ -10,7 +10,7 @@
 #define DHTTYPE DHT11
 #define refresh_time 5000 //define the sensor value refresh time in miliseconds
 //=========================Enter Device ID==========================
-String DeviceID = "p10M9pA8XBGsSiKowFiWcA";
+String DeviceID = "........"; // Enter you device ID 
 
 //=======================WiFi and Mqtt Credentials=================
 const char* ssid = "............."; // Wifi SSID
