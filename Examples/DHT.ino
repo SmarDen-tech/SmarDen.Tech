@@ -124,7 +124,7 @@ void setup() {
   client.setServer(mqtt_server, 1884); //mqtt port will be 1884
 }
 
-== == == == == == == == == == == == == == == == = Temperature Function == == == == == == == == == == == == == == == == == == == == == ==
+//===============================Temperature Function ========================================
 void temperature () {
   delay(refresh_time);
   float h = dht.readHumidity();
