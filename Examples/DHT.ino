@@ -112,8 +112,7 @@ int dBmtoPercentage(int dBm)
 
 //========================================Setup Part============================================
 void setup() {
-  pinMode(Switch, OUTPUT);     // Initialize the BUILTIN_LED pin as an outputs
-  Serial.begin(115200);
+  Serial.begin(115200)
   setup_wifi();
   runner.init(); // Initializing the runner and enebling the task 
   Serial.println("Initialized scheduler");
