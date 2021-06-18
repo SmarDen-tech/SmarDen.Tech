@@ -135,9 +135,9 @@ void temperature () {
   Serial.print(t);
   Serial.print(F("°C "));
   
+  Serial.println(" ");
   Serial.print("Publishing Device status and Signal Strength");
   client.publish(Pub_topic.c_str(), signalstrength.c_str(), false); // Publish the Signal Strength 
-  client.publish(Pub_topic.c_str(), mqttstatus.c_str(), false); //Publish the Device Status 
   
   String Temp_msg = "smarden_dev_respo " + TempID + " " + String(t);
   String Hum_msg = "smarden_dev_respo " + HumID + " " + String(h);
