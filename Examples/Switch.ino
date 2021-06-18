@@ -3,7 +3,7 @@
 #include <TaskScheduler.h>
 
 // Update these with values suitable for your network.
-#define Switch D4 // Define the pin Number on which the switch is connected 
+#define Switch D4 // Define the pin Number on which the switch is connected and default payloads are on and off
 //=========================Add Device ID Here===============================
 String DeviceID = "....................."; // Enter the device ID
 
@@ -32,7 +32,7 @@ const int RSSI_MIN = -100; // define minimum strength of signal in dBm
 
 //===================TaskSchedular==========================================
 void dev_status();
-Task T1(10000, TASK_FOREVER, &dev_status);
+Task T1(refresh_time, TASK_FOREVER, &dev_status);
 
 Scheduler runner;
 WiFiClient espClient;
@@ -149,8 +149,6 @@ void setup() {
 }
 
 void dev_status() {
-  delay(refresh_time); 
-  Serial.print("Publishing Device status and Signal Strength");
   client.publish(Pub_topic.c_str(), signalstrength.c_str(), false);
 }
 void loop() {
