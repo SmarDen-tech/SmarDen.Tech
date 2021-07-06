@@ -15,11 +15,11 @@ String DeviceID = "........"; // Enter you device ID
 const char* ssid = "............."; // Wifi SSID
 const char* password = ".........";   // WiFi Pssword
 const char* mqtt_server = "login.smarden.tech";  // Mqtt Server Address, please do not change
-const char* username = ".........";    //your instance username
-const char* mqtt_pass = "...........";      // your instance password
+const char* username = "smardentech";    //your instance username
+const char* mqtt_pass = "smardentech1@3$";      // your instance password
 
 //=======================Pub/sub Topics==============================
-String Pub_topic = "SMD_.........";  // Publishing topic, click on the element properties to find your publishing topic. 
+String Pub_topic = "smardentechresponse";  // Publishing topic, click on the element properties to find your publishing topic. 
 
 //=====================Add element ID=================================
 String TempID =  "........................."; // Element ID for the Temperature
