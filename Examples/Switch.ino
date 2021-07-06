@@ -11,8 +11,8 @@ String DeviceID = "....................."; // Enter the device ID
 const char* ssid = ".............."; // Enter wifi ssid 
 const char* password = "..........."; // Enter wifi Password 
 const char* mqtt_server = "login.smarden.tech"; // This is the Mqtt server address, do not change. 
-const char* username = "........."; // Enter your instance username 
-const char* mqtt_pass = "........."; // Enter your instance password 
+const char* username = "smardentech"; // Enter your instance username from the Instance tab
+const char* mqtt_pass = "smardentech1@3$"; // Enter your instance password from the Instance tab 
 
 //===========================Add topics here================================
 char* Topic = "......................."; // Enter you topic for the device that you've created
