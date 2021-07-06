@@ -7,8 +7,8 @@
 const char* ssid = ".........";
 const char* password = "........";
 const char* mqtt_server = "login.smarden.tech";
-const char* username = ".......";
-const char* mqtt_pass = ".....";
+const char* username = "smardentech";
+const char* mqtt_pass = "smardentech1@3$";
 char* Topic = "......";
 
 WiFiClient espClient;
