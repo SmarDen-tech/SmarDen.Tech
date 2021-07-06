@@ -16,7 +16,7 @@ const char* mqtt_pass = "smardentech1@3$"; // Enter your instance password from 
 
 //===========================Add topics here================================
 char* Topic = "......................."; // Enter you topic for the device that you've created
-String Pub_topic = "....................."; // Enter Publish topic on which the data will be published. 
+String Pub_topic = "smardentechresponse"; // Enter Publish topic on which the data will be published. 
 
 //====================Add  Element ID Here===================================
 String SwitchID = "........................"; // Enter your switch ID 
