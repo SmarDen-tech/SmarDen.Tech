@@ -85,13 +85,13 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
   if (msg == "on") {
     digitalWrite(Switch, HIGH);   
-    String Pub_msg = "smarden_dev_respo " + SwitchID + " " + msg; // Creating a message that will be published to the server. 
+    String Pub_msg = "smarden_dev_resp " + SwitchID + " " + msg; // Creating a message that will be published to the server. 
     client.publish(Pub_topic.c_str(), Pub_msg.c_str(), true); // Publishing the response to the server 
     Serial.println("Switch ON"); 
 
   } else if (msg == "off") {
     digitalWrite(Switch, LOW);  
-    String Pub_msg = "smarden_dev_respo " + SwitchID + " " + msg; // Creating a message that will be published to the server. 
+    String Pub_msg = "smarden_dev_resp " + SwitchID + " " + msg; // Creating a message that will be published to the server. 
     client.publish(Pub_topic.c_str(), Pub_msg.c_str(), true);  // Publishing the response to the server 
     Serial.println("Switch OFF");
   }
