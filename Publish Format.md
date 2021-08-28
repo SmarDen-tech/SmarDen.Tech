@@ -8,19 +8,27 @@ The communication protcol that we are using here is the MQTT Protocol and in the
 
 For Publishing the data the from the device to the platform, you'll need a Publsihing topic. In our Case the publishing Topic will be 
 
-* Publishing Topic - SMD_af619e492061ce2bdf17e2f86e0fe64c 
+* Publishing Topic - smardentechresponse
 
 You need to publish the data on this topic, you can also find this topic on the properties tab of any element.  
 
 ## Publishing the Data 
 
-Whenever you'll receive a Callback or Payload for any switch, you need to update the state of the switch on the server as well, for this you need to publish the data to ther dashboard. 
+Whenever you'll receive a Callback or Payload for any switch, you need to update the state of the switch on the server as well, for this you need to publish the data to the dashboard. 
 
 The Payload Format will be - 
-* smarden_dev_respo(space)ElementID(Space)msg
+* smarden_dev_resp(space)ElementID(Space)msg
 
 For example if you're creating a toggle switch and you're sending "ON" as on payload, then you need to publish this: 
-* smarden_dev_respo *element_id* ON as the payload to Publish Topic. 
+* smarden_dev_resp *element_id* ON as the payload to Publish Topic. 
+
+## Publishing Sensor Data 
+
+For publishing the sensor data you need to use this format: 
+* smarden_dev_sens(space)DeviceID(Space)data
+
+For example, if you're publishing the signal strength for a dedvice having Device ID as - "asifugib02iv9832g" the format will be 
+* smarden_dev_sens asifugib02iv9832g true
 
 ## Publishing Signal Strength 
 
