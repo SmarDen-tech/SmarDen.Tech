@@ -39,6 +39,12 @@ void setup() {
   pinMode(Switch, OUTPUT);
   Serial.begin(115200);
   AsyncWiFiManager wifiManager(&server, &dns);
+  Serial.println(WiFi.localIP()); // Once the WiFi is Connected, this function will give the local IP.
+  Serial.print(WiFi.RSSI());// Signal strength in dBm
+  Serial.print("dBm (");
+  Serial.print(dBmtoPercentage(WiFi.RSSI()));// Signal strength in %
+  Serial.print("% )");
+  signalstrength = "sig_strength " + DeviceID + " " + String(dBmtoPercentage(WiFi.RSSI())) + "%";
 
   //================================WIFI MANAGER=============================================
   {
