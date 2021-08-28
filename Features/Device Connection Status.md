@@ -11,7 +11,7 @@ Once we receive the data or the connection status from the device, we will redir
  
 In case if the device is disconnected to the Internet, there is a Last Will Message that we will receive from the device which ensures that the device is no longer connected to the Internet. 
 ```
-String Pub_topic = ".....................";
+String Pub_topic = "smardentechresponse";
 String willmessage = "dev_status " + DeviceID + " offline"; //do not change 
 String mqttstatus = "dev_status " + DeviceID + " online";  // do not change
 ```
