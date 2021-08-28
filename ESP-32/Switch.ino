@@ -5,7 +5,7 @@
 
 #define Switch 2 // Define the pin Number on which the switch is connected and default payloads are on and off
 //=========================Add Device ID Here===============================
-String DeviceID = "8l10uUNp9j4BlG3QmwOGzPzw"; // Enter the device ID
+String DeviceID = "......"; // Enter the device ID
 
 //============================WiFi and MQTT Credentials======================
 const char* mqtt_server = "login.smarden.tech"; // This is the Mqtt server address, do not change.
@@ -13,11 +13,11 @@ const char* username = "smardentech"; // Enter your instance username from the I
 const char* mqtt_pass = "smardentech1@3$"; // Enter your instance password from the Instance tab
 
 //===========================Add topics here================================
-char* Topic = "8l10uUNp9j4BlG3QmwOGzPzw/led"; // Enter you topic for the device that you've created
+char* Topic = "..........."; // Enter you topic for the device that you've created
 String Pub_topic = "smardentechresponse"; // Enter Publish topic on which the data will be published.
 
 //====================Add  Element ID Here===================================
-String SwitchID = "SWT_6118b9c10caf4"; // Enter your switch ID
+String SwitchID = "............"; // Enter your switch ID
 String willmessage = "dev_status " + DeviceID + " offline";
 String mqttstatus = "dev_status " + DeviceID + " online";
 String signalstrength ;
