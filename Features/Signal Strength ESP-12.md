@@ -1,6 +1,6 @@
 This Guide will help you in adding the feature of Signal Strenth in your device, this will reflect the wifi signal strength to the SmarDen Dashboard.
 
-## Signal Strength 
+## Signal Strength
 
 * RSSI - Received Signal Strength Indicator, It shows the power present in the received radio signal. 
 
