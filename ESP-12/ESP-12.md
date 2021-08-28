@@ -15,7 +15,7 @@ To install the ESP8266 board, (using Arduino 1.6.4+):
   - Open the "Tools -> Board -> Board Manager" and click install for the ESP8266"
   - Select your ESP8266 in "Tools -> Board"
 
-Here is this repository you'll find different sketches for different devices, download those sketches, use your Instance Credentials and you're good to go with your IoT Hardware. 
+Here is this repository you'll find different sketches for different devices, download those sketches, and you're good to go with your IoT Hardware. 
 
 ## Skectch Explanation 
 ```
@@ -28,15 +28,15 @@ While starting our Arduino Sketch for out IoT device, these are the basic two li
 const char* ssid = "........";
 const char* password = "........";
 const char* mqtt_server = "login.smarden.tech";
-const char* username = ".........";
-const char* mqtt_pass = "........"; 
+const char* username = "smardentech";
+const char* mqtt_pass = "smardentech1@3$"; 
 char* Topic = ".......";
 ```
 - **ssid** - Here you'll provide the SSID of your existing WiFi network to which you want to connect your IoT Hardware
 - **password** - Here you've to enter the password for your wifi network.
 - **mqtt_server** - Here you don't need to change this field as this is the address of your Mqtt broker. 
 > login.smarden.tech is the your mqtt server address. 
-- **Username** - This is the your Instance username that you've created on the SmarDen.Tech Platfrom. 
+- **Username** - This is the your Instance username. 
 - **mqtt_pass** - This is your mqtt instance password. 
 - **Topic** - The topic that you've created while adding any UI Element on the SmarDen Dashboard. 
 
