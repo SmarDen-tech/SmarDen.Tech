@@ -25,7 +25,7 @@ For example if you're creating a toggle switch and you're sending "ON" as on pay
 ## Publishing Sensor Data 
 
 For publishing the sensor data you need to use this format: 
-* smarden_dev_sens(space)DeviceID(Space)data
+* smarden_dev_sens(space)ElementID(Space)data
 
 For example, if you're publishing the sensor data for a dedvice having Device ID as - "asifugib02iv9832g" the format will be 
 * smarden_dev_sens asifugib02iv9832g true
