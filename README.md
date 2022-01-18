@@ -4,7 +4,7 @@
 - 🌱 I’m currently learning "a lot of things"
 - 💞️ I’m looking to collaborate on "Pheww! IoT Obviously"
 - 📫 How to reach me - It's quite simple, drop a mail - info@smarden.in
-or DM us on Insatagram @Smar_den
+or DM us on Insatagram @Smarden.tech
 
 ## SmarDen For Developers 
 Smarden.tech is a platform for Internet of Things and it is for the developers and the IoT enthusiasts who are working in the field of Internet of Things and want a complete one stop solution for the MQTT, Cloud, Back-end and Dashboard.
@@ -49,3 +49,9 @@ You can select any of these elments and it will be reflected on the dashboard.
 Once the element is created, you'll see the list of elements along with their specific "Element ID" and "Device ID". 
 
 * You'll be needing these element IDs and Device IDs while programming your IoT Hardware. 
+
+Now to use the platform with your IoT device, you need to download the "smarden_tech.h" and use it according in your skecth. 
+
+You can see the functions that you can use in the arduino sketch from the "Library Functions.md" file. 
+
+Happy Coding! 
