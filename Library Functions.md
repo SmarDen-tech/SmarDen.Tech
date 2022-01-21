@@ -1,11 +1,11 @@
 # SmarDen.Tech Library Functions 
 Here in this file, you'll find the functions that you can use from the smarden_tech.h file in your arduino sketch. The library folder in this repository contains all the necessary arduino libraries that you need to install. 
 Here is the list of libraries that you need to install
-- PubSubClient
-- ESP8266WiFi
-- TaskScheduler
-- ArduinoJson
-- ESP8266 HTTPClient 
+- PubSubClient - https://github.com/knolleary/pubsubclient
+- ESP8266WiFi - Included by default when you install ESP8266 Boards in Arduino IDE
+- TaskScheduler - https://github.com/arkhipenko/TaskScheduler
+- ArduinoJson - https://github.com/bblanchon/ArduinoJson
+- ESP8266 HTTPClient - https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266HTTPClient 
 
 ## Here is the list of functions that you can use from the smarden_tech.h file in your sketch. 
 - void wifi_connect(char* wifi_ssid, char* wifi_pass) 
