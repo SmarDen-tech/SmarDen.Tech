@@ -1,4 +1,5 @@
 #include "smarden_tech.h"
+#include <DHT.h>
 //==================Enter the details according to your instance=================================================
 String deviceid = "----------------------";                    // Enter the device ID
 String accesskey = "---------------------------";               // Enter the Access Key
